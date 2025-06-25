@@ -32,3 +32,24 @@ class Solution:
         return -1
 
 ```
+
+[leetcode 27](https://leetcode.com/problems/remove-element/)
+
+这个题最近做过，但是没有一遍做出来
+
+具体的问题在于判断的时候没有想清楚：因为只考虑了 ！= val的情况，没有考虑 == val的情况，已经跳过去了，所以不等的时候先放，然后p再递增，就已经指向了下一位，主要没考虑清楚nums[i] = nums[j] 这种赋值可以出现在这里
+
+最后放上我debug之后的code
+
+```Python
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        p = 0
+        for i in range(0,len(nums)):
+            if nums[i] != val:
+                nums[p] = nums[i]
+                p += 1
+        
+        return p
+
+```
