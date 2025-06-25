@@ -53,3 +53,43 @@ class Solution:
         return p
 
 ```
+
+[leetcode 977](https://leetcode.com/problems/remove-element/)
+
+
+暴力的的做法
+
+```Python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        for i in range(0,len(nums)):
+            nums[i] = nums[i]**2
+
+        nums.sort()
+
+        return nums
+        
+```
+
+这个地方也应该立刻做出来的，毕竟双指针也是第二遍过了，但是这里面看hint的时候陷入了一个误区就是空间复杂度要低，以为是在同一个数组下操作，所以导致这个地方出现了问题。而且这里没考虑到的一点就是最大的是必然在两边的，忽略了很多条件
+
+根据题解写出来的ac code：
+
+```Python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        result = [0]*len(nums)
+        left = 0 
+        right = len(nums) - 1
+        for i in range(len(nums) -1 , -1, -1):
+            if abs(nums[left]) <=  abs(nums[right]):
+                square = nums[right]
+                right -= 1
+            else:
+                square = nums[left]
+                left += 1
+            result[i] = square*square
+        return result
+
+```
+
