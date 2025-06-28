@@ -2,7 +2,7 @@
 
 leetcode 704, 27, 977
 
-[leetcode 704](https://leetcode.com/problems/binary-search/description/)
+## [leetcode 704](https://leetcode.com/problems/binary-search/description/)
 
 这里首先犯的第一个问题是确定中值，在这个题目中直接 (left + right) // 2 是没什么问题的，但是考虑到越界问题最安全的写法肯定还是 left + （right - left）// 2
 
@@ -33,7 +33,7 @@ class Solution:
 
 ```
 
-[leetcode 27](https://leetcode.com/problems/remove-element/)
+## [leetcode 27](https://leetcode.com/problems/remove-element/)
 
 这个题最近做过，但是没有一遍做出来
 
@@ -54,7 +54,7 @@ class Solution:
 
 ```
 
-[leetcode 977](https://leetcode.com/problems/remove-element/)
+## [leetcode 977](https://leetcode.com/problems/remove-element/)
 
 
 暴力的的做法
