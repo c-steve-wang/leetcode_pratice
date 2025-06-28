@@ -4,7 +4,7 @@ leetcode 203, 707, 206
 
 这部分基本是知道原理但是具体的细节不是很清楚，尤其是用python一步步实现
 
-[leetcode 203](https://leetcode.com/problems/remove-linked-list-elements/)
+## [leetcode 203](https://leetcode.com/problems/remove-linked-list-elements/)
 
 这个地方的基本原理我是清楚的，但是还是犯了两个错误要注意
 
@@ -32,7 +32,7 @@ class Solution:
 
 ```
 
-[leetcode 707](https://leetcode.com/problems/reverse-linked-list/)
+## [leetcode 707](https://leetcode.com/problems/reverse-linked-list/)
 
 1. 新建一个结点就是ListNode()这个要记住
 2. 所有的add要从虚拟节点开始，因为你并不知道现在的是不是空的，有可能tail就是head。注意在结尾只需要ListNode(val)，因为没有下一个了
@@ -94,7 +94,7 @@ class MyLinkedList:
 
 ```
 
-[leetcode 206](https://leetcode.com/problems/remove-element/)
+## [leetcode 206](https://leetcode.com/problems/remove-element/)
 
 这个地方我还是喜欢双指针，递归也看明白了，但还是喜欢时间复杂度和空间复杂度更低的写法
 主要还是这些思路比较熟悉，巩固一下，主要的问题还是在细节的实现上
