@@ -2,7 +2,7 @@
 
 leetcode 24，19，160， 142
 
-[leetcode 24](https://leetcode.com/problems/swap-nodes-in-pairs/)
+## [leetcode 24](https://leetcode.com/problems/swap-nodes-in-pairs/)
 
 这个题想到了大部分，但最后的问题在于没画图，具体的指针变化有点晕
 条件少考虑的点，不用定义pre，一个cur就够了，但是cur.next 和 cur.next.next 都要存在（这个地方考虑结点总数奇数或者偶数的情况，或者直接考虑两个示例里面的）
@@ -28,7 +28,7 @@ class Solution:
 
 ```
 
-[leetcode 19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+## [leetcode 19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 第一个自己写的ac了，简单来说就是先算长度，然后根据长度算需要从空结点向后几次，找到删除结点的前一个结点直接删就行
 
@@ -73,7 +73,7 @@ class Solution:
 
 ```
 
-[leetcode 160](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+## [leetcode 160](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
 这个地方需要注意两点
 1. 指针相等不是数值相等，因为next指针的地址可能不一样，实际上是后面的所有地址都必须一样。单纯的数值相等不一定找到这个位置
@@ -113,7 +113,7 @@ class Solution:
         
         return None
 ```
-[leetcode 142](https://leetcode.com/problems/linked-list-cycle-ii/)
+## [leetcode 142](https://leetcode.com/problems/linked-list-cycle-ii/)
 
 这个地方最终的是公式证明
 设快指针走两步，慢指针走一步，x到入口，y从入口到相遇，z是从相遇到入口
