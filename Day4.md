@@ -116,9 +116,13 @@ class Solution:
 [leetcode 142](https://leetcode.com/problems/linked-list-cycle-ii/)
 这个地方最终的是公式证明
 设快指针走两步，慢指针走一步，x到入口，y从入口到相遇，z是从相遇到入口
+
 --> 2(x+y) = x + y + n(y + z)
+
 --> x = (n-1)y + z
+
 --> x = z 
+
 最后一步因为走了几圈并不关键，关键的是从相遇点到入口，和从头到入口一致，到这一步就证明完毕了
 主要是把这一步推出来就好了，其他的没什么问题
 
