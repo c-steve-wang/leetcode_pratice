@@ -89,7 +89,9 @@ class Solution:
 
         return result
 ```
-## [leetcode 18](https://leetcode.com/problems/ransom-note/)
+## [leetcode 18](https://leetcode.com/problems/4sum/)
+
+这个地方一样的道理，但是要多写一层循环
 
 ```Python
 class Solution:
