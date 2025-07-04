@@ -106,4 +106,50 @@ class MyStack:
     def empty(self) -> bool:
         return not self.que
 ```
+## [leetcode 20](https://leetcode.com/problems/valid-parentheses/)
 
+这个题也算是没用栈的方式想出来，这个里面要注意循环外和循环内判断为空的条件不一致，第一个是还在循环里面，后面有多的括号， 外面才是遍历结束为空。
+
+这个地方也可以用python字典，相当于替代了刚开始的一圈elif
+
+```Python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        for item in s:
+            if item == '(':
+                stack.append(')')
+            elif item == '{':
+                stack.append('}')
+            elif item == '[':
+                stack.append(']')
+            elif not stack or item != stack[-1]:
+                return False
+            else:
+                stack.pop()
+        
+        if not stack:
+            return True
+        else:
+            return False
+```
+
+## [leetcode 1047](https://leetcode.com/problems/valid-parentheses/)
+这个题比较简单，也是一下就想到了，但是实现的时候是有一点小问题的
+1. 首先我没有考虑到空队列的情况，这个要存在才能判断
+2. 其次，pop（）这些函数是针对list的，不是针对字符串的，这个地方没有判断到
+
+其他的没什么问题，这个题没看题解也想到了
+
+```Python
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        res = list()
+        for i in s:
+            if res and res[-1] == i:
+                res.pop()
+            else:
+                res.append(i)
+
+        return ''.join(res)
+```
