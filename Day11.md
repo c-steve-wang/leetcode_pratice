@@ -31,6 +31,8 @@ class Solution:
 
         return stack.pop()
 ```
+
+下面这两个题没完全掌握，休息日二刷
 ## [leetcode 239]
 这个题还是要二刷
 ```Python
