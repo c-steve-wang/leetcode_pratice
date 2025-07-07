@@ -2,7 +2,7 @@
 
 leetcode 150, 239, 347
 
-## [leetcode 150]((https://leetcode.com/problems/evaluate-reverse-polish-notation/description/)
+## [leetcode 150](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/)
 
 这个题对于我来说没有难度，acm死去的记忆开始攻击我，直接用stack然后每次返回前两个数子进行运算就好了，但是边界条件要注意
 除法必须区取整数，其次这个题有个隐藏坑点就是输入的全是字符，但是最后又要求数字，所以所有的必须取整
