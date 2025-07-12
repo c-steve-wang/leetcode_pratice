@@ -2,20 +2,36 @@
 
 leetcode 110,257,404, 222
 
-## [leetcode 110](https://leetcode.com/problems/invert-binary-tree/)
+## [leetcode 110](https://leetcode.com/problems/balanced-binary-tree/)
 
-这个题是很简单很好理解的，但是在python实现的过程中间我还是有一些薄弱的地方
-比如swap这个操作在python里面怎么操作，迭代法的话需要self.fucntion而不是单纯的call function
+听明白之后还是很好理解的，主要是逐层返回 -1 这点很巧妙但是没有想到，听明白之后自己写完了剩下的代码然后ac了
 
 ```Python
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root:
-            return None
+    def getHeight(self,node):
+        if not node:
+            return 0
+        res = 0
+        leftheight = self.getHeight(node.left)
+        if leftheight == -1:
+            return -1
+        rightheight = self.getHeight(node.right)
         
-        root.left, root.right = root.right, root.left
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+        if rightheight == -1:
+            return -1
+        
+        if abs(leftheight - rightheight) > 1:
+            res = -1
+        else:
+            res = 1 + max(leftheight, rightheight)
 
-        return root
+        return res
+        
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        
+        result = self.getHeight(root)
+
+        return True if result >= 1 else False
 ```
