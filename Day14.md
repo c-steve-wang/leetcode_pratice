@@ -50,6 +50,7 @@ class Solution:
 
 ## [leetcode 104](https://leetcode.com/problems/invert-binary-tree/)
 这道题理解了思路还是蛮简单的，而且总体上来说也比之前更熟悉python的写法，最后这道题一定要注意为什么用后序
+一定要注意深度和高度是不一样的，这道题是因为最大深度就是最大高度，所以可以这么转换，后面不一定
 还是之前的那个思想，先处理左右，返回到中间，让中间的处理
 
 ```Python
