@@ -1,17 +1,28 @@
-# 代码随想录Day21
+# 代码随想录Day27
 
-leetcode 669, 538, 108
+leetcode 455，376，53
 
-*这里稍微赶一下进度，先听讲学会，后面要重新自己做一遍*
+[leetcode 455]
 
-[leetcode 669]
+主要是胃口和饼干的嵌套顺序不能搞混，感觉这个是简单极端，另外内层遍历用index控制
 
-这个地方的难点还是怎么接，理解了这个地方才是难点。
-这个地方还是隐约想到了，但是没定义，不能直接返回子树，而是要对right进行递归搜索，所有的结点都要检查，所以要继续往下递归
+```Python
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        g.sort()
+        s.sort()
+        res = 0 
+        index = len(s) - 1
+        for i in range(len(g)-1, -1, -1):
+            if index >= 0 and s[index] >= g[i]:
+                res += 1
+                index -=1
+        return res
+```
 
 
 [leetcode 538]
-这个题主要要注意平衡二叉树，不然就是一字长蛇右子树，和之前的构造很像，不断的取中间结点就行
+这个题主要要注意三种情况，就先不写了
 
 [leetcode 108]
-这个主要是看题，右中左遍历，设置pre 和 cur不断累加
+这个地方不是遇到负数跳过，而是连续和小于零没有正向增大作用就跳过
