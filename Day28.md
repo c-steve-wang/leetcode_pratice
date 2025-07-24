@@ -1,5 +1,10 @@
+# 代码随想录Day28
 
+leetcode 55,45,1005
 
+[leetcode 55]
+
+这个题之前做过，直接找每次的递增就好了
 
 ```Python
 class Solution:
