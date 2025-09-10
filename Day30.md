@@ -39,3 +39,4 @@ class Solution:
         return result 
 
 ```
+[leetcode 763](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
