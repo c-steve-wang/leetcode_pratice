@@ -40,3 +40,26 @@ class Solution:
 
 ```
 [leetcode 763](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
+
+这个题最重要的也是右边界，但是这个右边界用哈希表记录位置就可以，然后不断更新
+```
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hash = ['-inf'] * 27
+
+        for i in range(len(s)):
+            hash[ord(s[i]) - ord('a')] = i
+
+        left = 0; right = 0 
+        result = []
+        
+        for i in range(len(s)):
+            right = max(right, hash[ord(s[i]) - ord('a')])
+            if i == right:
+                lenth = right - left + 1
+                result.append(lenth)
+                left = right + 1
+
+        return result
+```
+这个题最重要的也是右边界，但是这个右边界用哈希表记录位置就可以，然后不断更新
