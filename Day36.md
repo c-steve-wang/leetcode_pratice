@@ -24,7 +24,8 @@ class Solution:
 ```
 [leetcode 494](https://leetcode.com/problems/partition-equal-subset-sum)
 这个地方要留意几点，第一个是如果left**不能被整除**则说明没有答案，比如case 1里面变成target 3 ，sum4的情况，这个是因为left必然是整数
-其次要注意dp[0]必须是1，因为是1才能往下dp
+其次要注意dp[0]必须是1，因为是1才能往下dp，第二个是不取也是一种方法，
+这个地方是所有求方法数的01背包问题的递推公式
 ```
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
