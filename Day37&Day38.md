@@ -71,5 +71,56 @@ class Solution:
 
 [leetcode 279](https://leetcode.com/problems/combination-sum-iv/)
 
+这个题被边界条件难到了，主要还是要从1开始，而且如果按照我这种list写也是一样的
+最好还是按照题解里面直接把平方加到循环里面
+
+```
+class Solution:
+    def numSquares(self, n: int) -> int:
+        sq_list = []
+        i = 1
+        while i * i <= n:
+            sq_list.append(i * i)
+            i += 1
+        
+        len_sq = len(sq_list)
+        
+        dp = [float('inf')] * (n+1)
+        dp[0] = 0
+
+        for j in range(1, n+1):
+            for i in range(len_sq):
+                if sq_list[i] <= j:
+                    dp[j] = min(dp[j], dp[j - sq_list[i]] + 1)
+
+        return dp[n]
+```
+
 
 [leetcode 139](https://leetcode.com/problems/combination-sum-iv/)
+
+这个地方出问题的点在于判断条件和dp数组的含义
+
+dp\[i\] 表示这个长度能拆了出来一个或多个单词字串，相当于从字串往下遍历
+
+
+```
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        wordSet = set(wordDict)
+
+        n = len(s)
+
+        dp = [False] * (len(s) + 1)
+        dp[0] = True
+
+        # keep the order, bag first
+
+        for j in range(1, n + 1):
+            for i in range(j):
+                if dp[i] == True and s[i:j] in wordSet:
+                    dp[j] = True
+                    break
+
+        return dp[n]
+```
